@@ -6,8 +6,84 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+    <link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
+    <link rel="stylesheet" href="//cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
 </head>
 <body>
-
+<form action="https://form-practice.herokuapp.com/create-application" method="post">
+    <h1>Personal information</h1>
+    <fieldset>
+        <legend>Personal information</legend>
+        <label>
+            <span>Surname: </span>
+            <input maxlength="5" type="text" name="surname" autocomplete="given-name" />
+        </label>
+        <label>
+            <span>Name: </span>
+            <input minlength="1" type="text" name="name" autocomplete="name" />
+        </label>
+        <label>
+            <span>How old are you: </span>
+            <input type="number" min="0" max="150" name="age"  />
+        </label>
+        <label>
+            <span>Full date of birth: </span>
+            <input type="date" name="dateOfBirth"/>
+        </label>
+        <label>
+            <span>I accept the terms of the agreement: </span>
+            <input type="checkbox" name="termsCheckbox" required />
+        </label>
+    </fieldset>
+    <fieldset>
+        <legend>Registration</legend>
+        <label>
+            <span>Email: </span>
+            <input type="email" name="email"/>
+        </label>
+        <label>
+            <span>Password: </span>
+            <input type="password" name="password"/>
+        </label>
+    </fieldset>
+    <fieldset>
+        <legend>An interesting fact about you!</legend>
+        <span>Do you love cats: </span>
+        <label>
+            <span>Yes</span>
+            <input value="true" type="radio" name="cats"/>
+        </label>
+        <label>
+            <span>No</span>
+            <input value="false" type="radio" name="cats"/>
+        </label>
+        <label>
+            <span>What is your favorite color</span>
+            <input type="color" name="color"/>
+        </label>
+        <label>
+            <span>What time do you go to bed</span>
+            <input type="time" name="time"/>
+        </label>
+        <label>
+            <span>What you favorite brand of cars</span>
+            <select name="cart" multiple>
+                <option value="MBW">BMW</option>
+                <option value="AUDI">Audi</option>
+                <option value="LADA" selected>Lada</option>
+            </select>
+        </label>
+        <label>
+            <span>How do you rate our work</span>
+            <input type="range" name="workRate"/>
+        </label>
+    </fieldset>
+    <fieldset>
+        <legend>Your comments</legend>
+        <textarea placeholder="Comments"></textarea>
+    </fieldset>
+    <input type="submit" />
+</form>
 </body>
 </html>
