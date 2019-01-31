@@ -1,0 +1,246 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        .block {
+            margin-bottom: 10px;
+        }
+
+        .block > div {
+            background: #00BCD4;
+            border: 1px solid #fff;
+            height: 150px;
+            color: #fff;
+            display: block;
+            width: 100%;
+        }
+        .inside {
+            position: relative;
+            height: 100%;
+            overflow: hidden;
+        }
+        .text {
+            position: absolute;
+            transform: translate(-50% ,-50%);
+            left: 50%;
+            top: 50%;
+            z-index: 1;
+        }
+
+        .first, .second, .third, .fourth, .fifth {
+            display: flex;
+        }
+
+        .third > div {
+            width: 25%;
+        }
+
+        .fourth > div {
+            width: 25%;
+        }
+
+        .fourth > div:last-child {
+            width: 50%;
+        }
+
+        @media (max-width: 1800px) {
+            .first, .second, .third, .fourth, .fifth {
+                flex-wrap: wrap;
+            }
+
+            .first > div {
+                width: 50%;
+            }
+
+            .second > div {
+                width: 50%;
+            }
+
+            .third > div {
+                width: 50%;
+            }
+            .third > div:last-child {
+                width: 100%;
+            }
+
+            .fourth > div:nth-child(n) {
+                width: 35%;
+            }
+            .fourth > div:nth-child(2) {
+                width: 30%;
+            }
+
+            .fifth {
+                justify-content: center;
+            }
+
+            .fifth > div {
+                width: 33%;
+            }
+        }
+
+        @media (max-width: 1200px) {
+            .third {
+                flex-wrap: nowrap;
+            }
+            .third > div:nth-child(n) {
+                width: 100%;
+            }
+
+            .fifth > div {
+                width: 50%;
+            }
+
+            .fifth > div:last-child {
+                width: 100%;
+            }
+        }
+        @media (max-width: 960px) {
+            .first > div, .second > div {
+                width: 50%;
+            }
+
+            .third {
+                flex-wrap: wrap;
+            }
+            .fourth > div:nth-child(n) {
+                width: 50%;
+            }
+            .fourth > div:last-child {
+                width: 100%;
+            }
+        }
+        @media (max-width: 768px) {
+            .first > div, .second > div{
+                width: 50%;
+            }
+            .fourth > div:nth-child(n) {
+                width: 100%;
+            }
+
+            .fifth > div:nth-child(n) {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+<main>
+    <h2>1 block</h2>
+    <div class="first block">
+        <div class="plain colored">
+            <div class="inside">
+                <div class="text">1</div>
+            </div>
+        </div>
+        <div class="plain colored">
+            <div class="inside">
+                <div class="text">2</div>
+            </div>
+        </div>
+        <div class="plain colored">
+            <div class="inside">
+                <div class="text">3</div>
+            </div>
+        </div>
+        <div class="plain colored">
+            <div class="inside">
+                <div class="text">4</div>
+            </div>
+        </div>
+    </div>
+
+    <h2>2 block</h2>
+    <div class="second block">
+        <div class="colored">
+            <div class="inside">
+                <div class="text">1</div>
+            </div>
+        </div>
+        <div class="colored">
+            <div class="inside">
+                <div class="text">2</div>
+            </div>
+        </div>
+    </div>
+
+    <h2>3 block</h2>
+    <div class="third block">
+        <div class="colored">
+            <div class="inside">
+                <div class="text">1</div>
+            </div>
+        </div>
+        <div class="colored">
+            <div class="inside">
+                <div class="text">2</div>
+            </div>
+        </div>
+        <div class="colored">
+            <div class="inside">
+                <div class="text">3</div>
+            </div>
+        </div>
+    </div>
+
+    <h2>4 block</h2>
+    <div class="fourth block">
+        <div class="colored">
+            <div class="inside">
+                <div class="text">1</div>
+            </div>
+        </div>
+        <div class="colored">
+            <div class="inside">
+                <div class="text">2</div>
+            </div>
+        </div>
+        <div class="colored">
+            <div class="inside">
+                <div class="text">3</div>
+            </div>
+        </div>
+    </div>
+
+    <h2>5 block</h2>
+    <div class="fifth block">
+        <div class="colored">
+            <div class="inside">
+                <div class="text">1</div>
+            </div>
+        </div>
+        <div class="colored">
+            <div class="inside">
+                <div class="text">2</div>
+            </div>
+        </div>
+        <div class="colored">
+            <div class="inside">
+                <div class="text">3</div>
+            </div>
+        </div>
+        <div class="colored">
+            <div class="inside">
+                <div class="text">4</div>
+            </div>
+        </div>
+        <div class="colored">
+            <div class="inside">
+                <div class="text">5</div>
+            </div>
+        </div>
+    </div>
+</main>
+
+</body>
+</html>
