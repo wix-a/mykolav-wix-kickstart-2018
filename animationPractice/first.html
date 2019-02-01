@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        :root {
+            --animation-time: 2s;
+            --animation-positive-points: 50px;
+            --animation-negative-points: -50px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .loader {
+            position: relative;
+            width: 50px;
+            height: 50px;
+            transform: rotate(-45deg);
+            animation-name: rotate360;
+            animation-duration: var(--animation-time);
+            animation-iteration-count: infinite;
+        }
+
+        .loader span {
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: transparent;
+            border: 4px solid black;
+        }
+
+        .loader span:nth-child(1) {
+            animation: transform1 var(--animation-time) backwards infinite linear;
+
+        }
+
+        .loader span:nth-child(2) {
+            animation: transform2 var(--animation-time) backwards infinite linear;
+
+        }
+
+        .loader span:nth-child(3) {
+            animation: transform3 var(--animation-time) backwards infinite linear;
+
+        }
+
+        .loader span:nth-child(4) {
+            animation: transform4 var(--animation-time) backwards infinite linear;
+        }
+
+        @keyframes transform1 {
+            50% {
+                border-color: #FF8C82;
+                transform: translate(0, var(--animation-negative-points));
+
+            }
+        }
+
+        @keyframes transform2 {
+            50% {
+                border-color: #6AA9FF;
+                transform: translate(var(--animation-positive-points), 0);
+            }
+        }
+
+        @keyframes transform3 {
+            50% {
+                border-color: #E2FF65;
+                transform: translate(0, var(--animation-positive-points));
+            }
+        }
+
+        @keyframes transform4 {
+            50% {
+                border-color: #67803E;
+                transform: translate(var(--animation-negative-points), 0);
+            }
+        }
+
+        @keyframes rotate360 {
+            50% {
+                transform: rotate(-135deg);
+            }
+            100% {
+                transform: rotate(-225deg);
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="loader">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+</body>
+</html>
