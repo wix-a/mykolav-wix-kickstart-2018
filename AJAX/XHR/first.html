@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="comments-wrapper"></div>
+</body>
+<script>
+    const xhr = new XMLHttpRequest();
+
+    xhr.open('GET', 'list.json');
+    xhr.send();
+
+    const wrapper = document.getElementById('comments-wrapper');
+
+    xhr.addEventListener('load', e => {
+        const data = JSON.parse(e.target.response);
+        console.log(data.list.map(({author, text}) => {
+            return `<div>
+                <span class="author">${author}</span>
+                <span class="text">${text}</span>
+            </div>`
+        }).join(''));
+
+        wrapper.innerHTML = data.list.map(({author, text}) => {
+            return `<div>
+                <span class="author">${author}</span>
+                <span class="text">${text}</span>
+            </div>`
+        }).join('');
+    });
+</script>
+</html>
