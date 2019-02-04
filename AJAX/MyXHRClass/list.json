@@ -1,0 +1,22 @@
+{
+  "comments": [
+    {
+      "id": 1,
+      "author": "john",
+      "text": "I'm the first one",
+      "replyId": "11"
+    },
+    {
+      "id": 2,
+      "author": "michael",
+      "text": "I'm the second one",
+      "replyId": "21"
+    },
+    {
+      "id": 3,
+      "author": "michael",
+      "text": "I'm the second one",
+      "replyId": "31"
+    }
+  ]
+}
